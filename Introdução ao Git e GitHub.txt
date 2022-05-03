@@ -1,0 +1,43 @@
+Gerar chave SSH no Git
+
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+após isso vai pedir pra digitar uma senha
+
+# cadastrar nova chave no GitHub
+
+Depois de adicionar uma nova chave SSH à sua conta em GitHub.com, você poderá reconfigurar quaisquer repositórios locais para usar SSH. Para obter mais informações, consulte "Alternar URLs remotos de HTTPS para SSH".
+
+Note: GitHub improved security by dropping older, insecure key types on March 15, 2022.
+
+As of that date, DSA keys (ssh-dss) are no longer supported. You cannot add new DSA keys to your personal account on GitHub.com.
+
+RSA keys (ssh-rsa) with a valid_after before November 2, 2021 may continue to use any signature algorithm. RSA keys generated after that date must use a SHA-2 signature algorithm. Some older clients may need to be upgraded in order to use SHA-2 signatures.
+
+Copie a chave pública SSH para a sua área de transferência.
+
+Se o seu arquivo de chave pública SSH tiver um nome diferente do código de exemplo, modifique o nome do arquivo para corresponder à sua configuração atual. Ao copiar sua chave, não adicione novas linhas nem espaços em branco.
+
+$ clip < ~/.ssh/id_ed25519.pub
+# Copies the contents of the id_ed25519.pub file to your clipboard
+Dica: se clip não estiver funcionando, você poderá localizar a pasta .ssh oculta, abrir o arquivo no seu editor de texto de preferência e copiá-lo na área de transferência.
+
+No canto superior direito de qualquer página, clique na sua foto de perfil e, em seguida, clique em Configurações.
+
+Ícone Settings (Configurações) na barra de usuário
+
+In the "Access" section of the sidebar, click  SSH and GPG keys.
+
+Clique em New SSH key (Nova chave SSH) ou Add SSH key (Adicionar chave SSH).
+Botão SSH Key (Chave SSH)
+
+No campo "Title" (Título), adicione uma etiqueta descritiva para a nova chave. Por exemplo, se estiver usando um Mac pessoal, você poderá chamar essa chave de "Personal MacBook Air".
+
+Cole sua chave no campo "Key" (Chave).
+O campo de chave
+
+Clique em Add SSH key (Adicionar chave SSH).
+O botão Add key (Adicionar chave)
+
+Se solicitado, confirme sua senha do GitHub.
+Caixa de diálogo Sudo mode (Modo sudo)
